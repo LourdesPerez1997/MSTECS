@@ -1,0 +1,35 @@
+﻿@model MSTECS.Models.Client
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Client_Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3 class="text-danger"> Are you sure you want to remove client ?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="ClientId" />
+            <div class="mb-2">
+                <label class="form-label" asp-for="Name">Client Name</label>
+                <input class="form-control form-control-sm" asp-for="Name" type="text" />
+
+            </div>
+
+            <btn class="btn-danger btn-sm btn w-25" type="submit">Eliminar</btn>
+            <div class="mb-2">
+                
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Return</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<h1>Eliminar</h1>
+

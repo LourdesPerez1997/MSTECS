@@ -1,0 +1,42 @@
+﻿@model MSTECS.Models.ViewModels.ClientVM
+@{
+    ViewData["Title"] = "Client_Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(Model.oClient.ClientId == 0)
+{
+    <h1>New Client</h1>
+}
+else
+{
+    <h1>Edit Client</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Client_Detail1" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="oClient.ClientId" />
+            <div class="mb-2">
+                <label class="form-label" asp-for="oClient.Name">Client Name</label>
+                <input class="form-control form-control-sm" asp-for="oClient.Name" type="text" />
+
+            </div>
+
+            <div class="mb-2">
+                @if(Model.oClient.ClientId == 0)
+                    {
+                      <btn class="btn btn-primary btn-sm w-25" type="submit">Create</btn>
+                       
+                    }
+                    else
+                    {
+                      <btn class="btn btn-primary btn-sm w-25" type="submit">Update</btn>
+                    }
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Return</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
